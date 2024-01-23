@@ -1,0 +1,64 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>CONVERSION CALCULATOR</title>
+<h1><a href="homepage.html"> HOMEPAGE </a> | <a href="convpage.html">ABOUT CONVERSION </a> |<a href="">CONVERSION CALCULATOR</a></h1>
+</head>
+<body class="body3">
+<h2 class="head4"> Length Converter </h2>
+<p class="p3">Enter a value to convert.</p>
+      <p class="p4">
+        <select id="type-conversion">
+          <option value="kmtom">Km to m</option>
+          <option value="mtokm">m to km</option>
+          <option value="mtocm">m to cm</option>
+          <option value="cmtom">cm to m</option>
+          <option value="cmtomm">cm to mm</option>
+          <option value="mmtocm">mm to cm</option>
+        </select>
+		
+        <input type="number" id="inputtext" placeholder="Enter a value:">
+		<button onClick="convert()">Convert</button>
+		<p id="result"></p>
+		
+		<script>
+		function convert() {
+			var TypeOfConversion = document.getElementById('type-conversion').value;
+            var inputValue = document.getElementById('inputtext').value;
+            var result;
+			
+			switch (TypeOfConversion) {
+				case 'kmtom':
+                    // Convert km to m
+                    result = inputValue*1000;
+                    break;
+				case 'mtokm':
+					result = inputValue/1000;
+                    break;
+				case 'mtocm':
+                    // Convert m to vm
+                    result = inputValue*100;
+                    break;
+				case 'cmtom':
+                    // Convert cm to mm
+                    result = inputValue/100;
+                    break;
+				case 'cmtomm':
+                    // Convert cm to mm
+                    result = inputValue*10;
+                    break;
+				case 'mmtocm':
+                    // Convert mm to cm
+                    result = inputValue/10;
+                    break;
+				}
+
+            document.getElementById('result').innerHTML = 'Result: ' + result;
+        }
+</script>
+		
+      <hr>
+      <p  class="p5"><i>create by Nurin Aina <sup>&copy; </sup> by 2024</p>
+      <hr>
+</body>
+</html>
